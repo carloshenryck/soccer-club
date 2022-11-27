@@ -1,8 +1,6 @@
-import * as express from 'express';
+import { Express } from 'express';
 import loginRoute from './login.routes';
 
-const routers = express.Router();
-
-routers.use('/login', loginRoute);
-
-export default routers;
+export default function createRoutes(app: Express) {
+  app.use('/login', loginRoute);
+}

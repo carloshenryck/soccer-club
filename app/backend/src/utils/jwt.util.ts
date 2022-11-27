@@ -1,23 +1,12 @@
 import * as jwt from 'jsonwebtoken';
+import { IUserDataForToken } from '../@types/ILogin';
 
-require('dotenv/config');
-
-export interface IuserFromDatabase {
-  id: number,
-  username: string,
-  role: string,
-  email: string,
-  password?: string,
-}
-
-const createToken = (data: IuserFromDatabase): string => {
-  const token = jwt.sign({ data }, process.env.JWT_SECRET as string, {
-    algorithm: 'HS256',
-  });
-
-  return token;
+export const verifyToken = (token: string): IUserDataForToken => {
+  const { JWT_SECRET } = process.env;
+  return jwt.verify(token, JWT_SECRET as string) as IUserDataForToken;
 };
 
-export {
-  createToken,
+export const createToken = (user: IUserDataForToken): string => {
+  const token = jwt.sign(user, process.env.JWT_SECRET as string);
+  return token;
 };

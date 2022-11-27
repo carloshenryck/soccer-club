@@ -1,5 +1,6 @@
 import * as express from 'express';
-import routes from './routes';
+import createRoutes from './routes';
+import { createErrorHandler } from './middlewares/errorHandler';
 
 class App {
   public app: express.Express;
@@ -11,7 +12,6 @@ class App {
 
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
-    this.app.use(routes);
   }
 
   private config():void {
@@ -24,6 +24,8 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    createRoutes(this.app);
+    createErrorHandler(this.app);
   }
 
   public start(PORT: string | number):void {
