@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "paths": {
       "*": ["node_modules/*"]
-    }
+    },
+    "typeRoots": [
+      "./node_module/@types",
+      "./src/@types/express"
+    ],
   },
   "include": ["src/**/*"],
   "exclude": ["src/tests"]
