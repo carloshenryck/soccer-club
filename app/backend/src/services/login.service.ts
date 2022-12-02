@@ -1,6 +1,6 @@
 import { compare } from 'bcryptjs';
 import { Unauthorized } from '../@types/errors';
-import { ILoginData, IUserDataFromDatabase } from '../@types/ILogin';
+import { ILoginData, IUserDataForToken } from '../@types/ILogin';
 import User from '../database/models/User';
 import * as jwtUtils from '../utils/jwt.util';
 
@@ -12,7 +12,13 @@ export default class LoginService {
       throw new Unauthorized('Incorrect email or password');
     }
 
-    const { password: ps, ...userWithoutPassword } = user?.dataValues as IUserDataFromDatabase;
+    const userWithoutPassword = {
+      id: user.id,
+      role: user.role,
+      username: user.username,
+      email: user.email,
+    } as IUserDataForToken;
+
     const token = jwtUtils.createToken(userWithoutPassword);
     return token;
   }

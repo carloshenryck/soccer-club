@@ -1,0 +1,3 @@
+const adminUserToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNjY5NTE4NTU2fQ.uTG_HOXe6LYflt61Hz9FA116tvshxKTiHgA7WxBQrMI';
+
+export { adminUserToken };

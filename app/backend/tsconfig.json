@@ -20,6 +20,9 @@
       "./node_module/@types",
       "./src/@types/express"
     ],
+    "types": [
+      "mocha",
+    ],
   },
   "include": ["src/**/*"],
   "exclude": ["src/tests"]
