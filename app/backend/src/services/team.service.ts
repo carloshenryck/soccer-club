@@ -1,7 +1,7 @@
 import { NotFound } from '../@types/errors';
 import Team from '../database/models/Team';
 
-export default class teamService {
+export default class TeamService {
   static async getAllTeams(): Promise<Team[]> {
     const teams = await Team.findAll();
     return teams;

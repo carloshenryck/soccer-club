@@ -12,7 +12,7 @@ export const createErrorHandler = (app: Express) => {
     if (err instanceof BaseError) {
       return res.status(err.statusCode).json({ message: err.message });
     }
-
+    console.log(err);
     res.status(500).json({ message: 'Internal Server Error' });
   });
 };
