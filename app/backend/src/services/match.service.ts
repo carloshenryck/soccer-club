@@ -1,5 +1,6 @@
 import { IMatchQuery } from '../@types/IMatchQuery';
 import { IMatchData } from '../@types/IMatchData';
+import { NotFound } from '../@types/errors';
 
 import Match from '../database/models/Match';
 import Team from '../database/models/Team';
@@ -22,5 +23,17 @@ export default class TeamService {
   static async createMatch(matchData: IMatchData): Promise<Match> {
     const match = await Match.create({ ...matchData, inProgress: true });
     return match;
+  }
+
+  static async finishMatch(id: number): Promise<void> {
+    const match = await Match.findOne({ where: { id } });
+
+    if (!match) {
+      throw new NotFound('Match not found!');
+    }
+
+    await Match.update({
+      inProgress: false,
+    }, { where: { id } });
   }
 }
