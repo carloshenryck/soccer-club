@@ -11,4 +11,9 @@ router.get(
   errorHandlerWrapper(MatchController.getAllMatches),
 );
 
+router.post(
+  '/',
+  errorHandlerWrapper(MatchController.createMatch),
+);
+
 export default router;
