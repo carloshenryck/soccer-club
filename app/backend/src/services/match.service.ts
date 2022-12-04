@@ -1,11 +1,12 @@
 import { IMatchQuery } from '../@types/IMatchQuery';
 import { IMatchData } from '../@types/IMatchData';
-import { NotFound } from '../@types/errors';
+import { NotFound, UnprocessableEntity } from '../@types/errors';
+import { IGoals } from '../@types/IGoals';
 
 import Match from '../database/models/Match';
 import Team from '../database/models/Team';
 
-export default class TeamService {
+export default class MatchService {
   static async getAllMatches(query: IMatchQuery): Promise<Match[]> {
     const isInProgress = query === 'true' || query === 'false' ? (query === 'true') : null;
 
@@ -33,14 +34,34 @@ export default class TeamService {
   }
 
   static async finishMatch(id: number): Promise<void> {
+    await MatchService.getMatchById(id);
+    await Match.update({
+      inProgress: false,
+    }, { where: { id } });
+  }
+
+  static async updateMatchGoals(id: number, goalsData: IGoals): Promise<Match> {
+    const match = await MatchService.getMatchById(id);
+
+    if (!match.inProgress) {
+      throw new UnprocessableEntity('Match have already finished');
+    }
+
+    await Match.update({
+      homeTeamGoals: goalsData.homeTeamGoals,
+      awayTeamGoals: goalsData.awayTeamGoals,
+    }, { where: { id } });
+
+    return { ...match.dataValues, ...goalsData };
+  }
+
+  static async getMatchById(id: number): Promise<Match> {
     const match = await Match.findOne({ where: { id } });
 
     if (!match) {
       throw new NotFound('Match not found!');
     }
 
-    await Match.update({
-      inProgress: false,
-    }, { where: { id } });
+    return match;
   }
 }
