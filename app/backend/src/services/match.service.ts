@@ -21,6 +21,13 @@ export default class TeamService {
   }
 
   static async createMatch(matchData: IMatchData): Promise<Match> {
+    const homeTeam = await Team.findByPk(matchData.homeTeam);
+    const awayTeam = await Team.findByPk(matchData.awayTeam);
+
+    if (!homeTeam || !awayTeam) {
+      throw new NotFound('There is no team with such id!');
+    }
+
     const match = await Match.create({ ...matchData, inProgress: true });
     return match;
   }

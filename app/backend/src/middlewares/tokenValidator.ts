@@ -15,7 +15,7 @@ const validateToken = (req: IRequestWithUser, _res: Response, next: NextFunction
     req.user = user;
     next();
   } catch (e) {
-    throw new Unauthorized('Expired or invalid token');
+    throw new Unauthorized('Token must be a valid token');
   }
 };
 

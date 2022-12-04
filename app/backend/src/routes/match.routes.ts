@@ -1,6 +1,8 @@
 import * as express from 'express';
 
 import { errorHandlerWrapper } from '../middlewares/errorHandler';
+import validateToken from '../middlewares/tokenValidator';
+import validateMatch from '../middlewares/matchValidator';
 
 import MatchController from '../controllers/match.controller';
 
@@ -13,6 +15,8 @@ router.get(
 
 router.post(
   '/',
+  validateToken,
+  validateMatch,
   errorHandlerWrapper(MatchController.createMatch),
 );
 
