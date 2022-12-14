@@ -66,6 +66,31 @@ const calculateEfficiency = (points: teamStats, games: teamStats): number => {
   return +((totalPoint / (totalGames * 3)) * 100).toFixed(2);
 };
 
+export const sumStatsHelper = (homeStats: ITeamsStats, awayStats: ITeamsStats) => {
+  const halfStats = {
+    totalLosses: (homeStats.totalLosses ?? 0) + (awayStats.totalLosses ?? 0),
+    goalsFavor: (homeStats.goalsFavor ?? 0) + (awayStats.goalsFavor ?? 0),
+    goalsOwn: (homeStats.goalsOwn ?? 0) + (awayStats.goalsOwn ?? 0),
+    goalsBalance: (homeStats.goalsBalance ?? 0) + (awayStats.goalsBalance ?? 0),
+  };
+  return halfStats;
+};
+
+export const sumStats = (homeStats: ITeamsStats, awayStats: ITeamsStats) => {
+  const halfStats = {
+    name: homeStats.name,
+    totalPoints: (homeStats.totalPoints ?? 0) + (awayStats.totalPoints ?? 0),
+    totalGames: (homeStats.totalGames ?? 0) + (awayStats.totalGames ?? 0),
+    totalVictories: (homeStats.totalVictories ?? 0) + (awayStats.totalVictories ?? 0),
+    totalDraws: (homeStats.totalDraws ?? 0) + (awayStats.totalDraws ?? 0),
+  };
+
+  const anotherHalf = sumStatsHelper(homeStats, awayStats);
+  const efficiency = calculateEfficiency(halfStats.totalPoints, halfStats.totalGames);
+
+  return { ...halfStats, ...anotherHalf, efficiency };
+};
+
 export const ordenateByPoints = (teams: ITeamsStats[]): ITeamsStats[] => {
   const halfOrdenated = teams.sort((a, b) => (
     (b.totalPoints ?? 0) - (a.totalPoints ?? 0)

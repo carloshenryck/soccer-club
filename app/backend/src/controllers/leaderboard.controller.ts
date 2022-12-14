@@ -12,4 +12,9 @@ export default class LeaderboardController {
     const teams = await LeaderboardService.getAwayTeamsStats();
     res.status(200).json(teams);
   }
+
+  static async getTeamStats(_req: Request, res: Response) {
+    const teams = await LeaderboardService.getTeamsStats();
+    res.status(200).json(teams);
+  }
 }

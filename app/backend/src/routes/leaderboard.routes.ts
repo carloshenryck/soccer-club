@@ -7,6 +7,11 @@ import LeaderboardController from '../controllers/leaderboard.controller';
 const router = express.Router();
 
 router.get(
+  '/',
+  errorHandlerWrapper(LeaderboardController.getTeamStats),
+);
+
+router.get(
   '/home',
   errorHandlerWrapper(LeaderboardController.getTeamHomeStats),
 );
