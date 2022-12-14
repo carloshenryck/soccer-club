@@ -14,4 +14,15 @@ export default class LeaderboardService {
 
     return ordenatedStats;
   }
+
+  static async getAwayTeamsStats(): Promise<unknown> {
+    const teams = await Team.findAll({
+      include: { model: Match, as: 'teamAway', where: { inProgress: false } },
+    });
+
+    const stats = teams.map((team) => getTeamStats(team, 'teamAway'));
+    const ordenatedStats = ordenateByPoints(stats);
+
+    return ordenatedStats;
+  }
 }

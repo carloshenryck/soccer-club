@@ -7,4 +7,9 @@ export default class LeaderboardController {
     const teams = await LeaderboardService.getHomeTeamsStats();
     res.status(200).json(teams);
   }
+
+  static async getTeamAwayStats(_req: Request, res: Response) {
+    const teams = await LeaderboardService.getAwayTeamsStats();
+    res.status(200).json(teams);
+  }
 }

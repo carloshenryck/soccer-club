@@ -11,4 +11,9 @@ router.get(
   errorHandlerWrapper(LeaderboardController.getTeamHomeStats),
 );
 
+router.get(
+  '/away',
+  errorHandlerWrapper(LeaderboardController.getTeamAwayStats),
+);
+
 export default router;
