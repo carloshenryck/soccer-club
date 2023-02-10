@@ -31,11 +31,11 @@ In this project, I practiced my skills to create an API with Node.js and Sequeli
 
 **_You need docker-compose installed_**
 
-Start containers
-```bash
-npm run dev compose:up:dev
-```
 Install dependences
 ```bash
-npm i
+npm run install:apps
+```
+Start containers
+```bash
+npm run compose:up:dev
 ```
