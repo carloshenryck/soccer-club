@@ -1,10 +1,11 @@
 <h1 align="center" height="700">
   soccer-club
 </h1>
-
 <p align="center">
   Projeto desenvolvido durante o módulo de back-end no curso da trybe
 </p>
+
+<br>
 
 ## 📋 Sobre
 O projeto consiste em desenvolver uma REST API para o gerenciamento de partidas e times de futebol.
