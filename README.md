@@ -8,7 +8,7 @@
 <br>
 
 ## 📋 Sobre
-O projeto consiste em desenvolver uma REST API utilizando a arquitetura MSC(Model-Service-Controller), para o gerenciamento de partidas e times de futebol.
+O projeto consiste em desenvolver uma REST API utilizando a arquitetura MSC(Model-Service-Controller) e com testes unitários, para o gerenciamento de partidas e times de futebol.
 **OBS: Todo o código autoral está presente apenas na pasta back-end, o front-end já estava desenvolvido**
 
 ## ✨ Funcionalidades
