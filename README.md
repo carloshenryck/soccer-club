@@ -19,7 +19,7 @@ O projeto consiste em desenvolver uma REST API para o gerenciamento de partidas 
 - Aplicar filtros ao leaderboard
 - Ao logar como administrador, você pode realizar o CRUD de times e partidas
 
-## 💻 Technologies
+## 💻 Tecnologias
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![ExpressJS](https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=express)
 ![Sequelize](https://img.shields.io/badge/Sequelize-0C3E6F?style=for-the-badge&logo=sequelize)
@@ -27,8 +27,9 @@ O projeto consiste em desenvolver uma REST API para o gerenciamento de partidas 
 ![MySQL](https://img.shields.io/badge/MySQL-1C1C1C?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/docker%20-%230db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white)
 
-## 🧠 O que aprendi ?
-Nesse projeto aprendi a utilizar Typescript e o padrão de POO em uma API
+## 🧠 Aprendizados
+- Utilizar Typescript juntamente com NodeJs e Express
+- Utilizar o padrão POO para o desenvolvimento de uma API
 
 ## 📦 Rodando o projeto
 
