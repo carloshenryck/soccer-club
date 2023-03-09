@@ -1,5 +1,5 @@
 <h1 align="center" height="700">
-  football-club
+  soccer-club
 </h1>
 
 <p align="center">
