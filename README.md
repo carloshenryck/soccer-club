@@ -3,18 +3,20 @@
 </h1>
 
 <p align="center">
-  A project developed at Trybe's Back-End Module
+  Projeto desenvolvido durante o módulo de back-end no curso da trybe
 </p>
 
-## 📋 About
-REST API to manage soccer teams. The front-end was made by the trybe team
+## 📋 Sobre
+O projeto consiste em desenvolver uma REST API para o gerenciamento de partidas e times de futebol.
+**OBS: Todo o código autoral está presente apenas na pasta back-end, o front-end já estava desenvolvido**
 
-## ✨ Functionalities 
-- Login with email and password
-- Get informations about the teams
-- Matches CRUD
-- Get matches with "in-progress" filter
-- Get leaderboard, and filter them by home team, or away team
+## ✨ Funcionalidades
+- Logar com email e senha
+- Visualizar as partidas 
+- Aplicar filtro nas partidas
+- Visualizar o leaderboard de times
+- Aplicar filtros ao leaderboard
+- Ao logar como administrador, você pode realizar o CRUD de times e partidas
 
 ## 💻 Technologies
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
@@ -24,18 +26,18 @@ REST API to manage soccer teams. The front-end was made by the trybe team
 ![MySQL](https://img.shields.io/badge/MySQL-1C1C1C?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/docker%20-%230db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white)
 
-## 🧠 What I learned
-In this project, I practiced my skills to create an API with Node.js and Sequelize ORM and learned how to use Typescript and OOP pattern in an API
+## 🧠 O que aprendi ?
+Nesse projeto aprendi a utilizar Typescript e o padrão de POO em uma API
 
-## 📦 Running
+## 📦 Rodando o projeto
 
-**_You need docker-compose installed_**
+**_Você precisará do docker-compose instalado_**
 
-Install dependences
+Instale as dependências
 ```bash
 npm run install:apps
 ```
-Start containers
+Rode os containers
 ```bash
 npm run compose:up:dev
 ```
