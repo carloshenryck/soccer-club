@@ -1,21 +1,23 @@
-<h1 align="center" height="700">
-  soccer-club
-</h1>
+<p align="center">
+  <img src="./app/frontend/src/images/negative_logo.png" alt="soccer club logo" width="150" align="center"/>
+</p>
+<hr />
 <p align="center">
   Projeto desenvolvido durante o módulo de back-end no curso da trybe
 </p>
-
 <br>
 
 ## 📋 Sobre
 O projeto consiste em desenvolver uma REST API utilizando a arquitetura MSC(Model-Service-Controller) e com testes unitários, para o gerenciamento de partidas e times de futebol.
 **OBS: Todo o código autoral está presente apenas na pasta back-end, o front-end já estava desenvolvido**
 
+<img src="./app/frontend/src/images/main_screen.png" alt="main screen screenshot" width="800"/>
+
 ## ✨ Funcionalidades
 - Logar com email e senha
 - Visualizar as partidas 
 - Aplicar filtros nas partidas
-- Visualizar o leaderboard dos times
+- Visualizar o leaderboard com estatísticas dos times
 - Aplicar filtros ao leaderboard
 - Ao logar como administrador, você pode realizar o CRUD de times e partidas
 
