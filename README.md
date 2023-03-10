@@ -14,8 +14,8 @@ O projeto consiste em desenvolver uma REST API utilizando a arquitetura MSC(Mode
 ## ✨ Funcionalidades
 - Logar com email e senha
 - Visualizar as partidas 
-- Aplicar filtro nas partidas
-- Visualizar o leaderboard de times
+- Aplicar filtros nas partidas
+- Visualizar o leaderboard dos times
 - Aplicar filtros ao leaderboard
 - Ao logar como administrador, você pode realizar o CRUD de times e partidas
 
